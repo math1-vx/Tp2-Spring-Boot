@@ -27,10 +27,9 @@
     <label for="phone">Phone:</label>
     <input type="text" id="phone" th:field="*{phone}" />
 
-    <label for="fonction">Function:</label>
-    <select name="employee.fonction" id="fonction" th:field="*{fonction}">
-        <option th:each="fonction : ${T(fr.tp1.mathis.utils.Fonction).values()}"
-                th:value="${fonction}" th:text="${fonction}"></option>
+    <select name="fonction">
+        <option th:each="fonctionOpt : ${T(fr.tp1.mathis.utils.Fonction).values()}"
+                th:value="${fonctionOpt}" th:text="${fonctionOpt}"></option>
     </select>
 
     <button type="submit">Submit</button>

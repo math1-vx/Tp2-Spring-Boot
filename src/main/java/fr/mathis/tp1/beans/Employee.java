@@ -1,8 +1,15 @@
 package fr.mathis.tp1.beans;
 
 import fr.mathis.tp1.utils.Fonction;
+import jakarta.persistence.Entity;
+import jakarta.persistence.Table;
+import lombok.AllArgsConstructor;
 import lombok.Data;
+import lombok.NoArgsConstructor;
 
+
+@Entity
+@Table(name = "employee")
 @Data
 public class Employee {
 
@@ -22,5 +29,6 @@ public class Employee {
         this.phone = phone;
         this.fonction = fonction;
     }
+
 
 }
