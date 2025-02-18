@@ -11,24 +11,16 @@ import lombok.NoArgsConstructor;
 @Entity
 @Table(name = "employee")
 @Data
+@AllArgsConstructor
+@NoArgsConstructor
 public class Employee {
 
     private String name = "Default";
-    private String adress;
     private String email;
     private String phone;
+    private String adress;
     private Fonction fonction;
 
-    public Employee() {
-    }
-
-    public Employee(String name, String adress, String email, String phone, Fonction fonction) {
-        this.name = name;
-        this.adress = adress;
-        this.email = email;
-        this.phone = phone;
-        this.fonction = fonction;
-    }
 
 
 }

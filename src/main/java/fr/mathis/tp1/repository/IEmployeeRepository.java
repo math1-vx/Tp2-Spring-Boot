@@ -10,4 +10,6 @@ import java.util.List;
 
 @Repository
 public interface IEmployeeRepository extends CrudRepository<Employee, Long> {
+
+
 }
