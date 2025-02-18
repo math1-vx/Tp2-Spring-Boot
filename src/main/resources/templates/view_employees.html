@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Employees</title>
+</head>
+<body>
+<h1>Employees</h1>
+
+<ul>
+    <li th:each="employee : ${employees}"
+        th:text="${employee.name}"
+        th:style="'background-color:' + ${employee.fonction.getCodeCouleur()}"></li>
+</ul>
+
+<h2>Ajouter employee</h2>
+<form th:action="@{/addemployee}" th:method="post" th:object="${employee}">
+    <label for="name">Name:</label>
+    <input type="text" id="name" th:field="*{name}" />
+
+    <label for="adress">Adress:</label>
+    <input type="text" id="adress" th:field="*{adress}" />
+
+    <label for="email">Email:</label>
+    <input type="text" id="email" th:field="*{email}" />
+
+    <label for="phone">Phone:</label>
+    <input type="text" id="phone" th:field="*{phone}" />
+
+    <label for="fonction">Function:</label>
+    <select name="employee.fonction" id="fonction" th:field="*{fonction}">
+        <option th:each="fonction : ${T(fr.tp1.mathis.utils.Fonction).values()}"
+                th:value="${fonction}" th:text="${fonction}"></option>
+    </select>
+
+    <button type="submit">Submit</button>
+</form>
+
+</body>
+</html>

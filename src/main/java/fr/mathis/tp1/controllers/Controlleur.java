@@ -8,11 +8,4 @@ import org.springframework.web.bind.annotation.ResponseBody;
 
 @Controller
 class Controlleur {
-    @RequestMapping("/")
-    public String getTemplate1(Model param1) {
-
-        param1.addAttribute("name","Capteur température");
-
-        return "template1";
-    }
 }
